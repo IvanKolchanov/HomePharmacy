@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         navController = navHostFragment.getNavController();
 
         mainButtomNavigator = (BottomNavigationView) findViewById(R.id.main_activity_bottom_navigation);
+        mainButtomNavigator.setItemIconTintList(null);
         mainButtomNavigator.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.drugs_bottom_menu_item:

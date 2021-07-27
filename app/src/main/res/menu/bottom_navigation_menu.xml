@@ -7,5 +7,6 @@
     <item
         android:id="@+id/calendar_bottom_menu_item"
         android:enabled="true"
-        android:title="no title"/>
+        android:title="no title"
+        android:icon="@drawable/ic_calendar_grey"/>
 </menu>
