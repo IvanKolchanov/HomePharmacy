@@ -3,10 +3,11 @@
     <item
         android:id="@+id/drugs_bottom_menu_item"
         android:enabled="true"
-        android:title="no title"/>
+        android:icon="@drawable/drug_item_icon_selector"
+        android:title="@string/first_bottom_navigation_item_text"/>
     <item
         android:id="@+id/calendar_bottom_menu_item"
         android:enabled="true"
-        android:title="no title"
-        android:icon="@drawable/ic_calendar_grey"/>
+        android:title="@string/second_bottom_navigation_item_text"
+        android:icon="@drawable/calendar_item_icon_selector"/>
 </menu>

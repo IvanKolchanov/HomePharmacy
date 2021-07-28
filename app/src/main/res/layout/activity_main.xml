@@ -20,6 +20,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/main_activity_bottom_navigation"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/bottom_navigation_menu" />
+        android:theme="@style/MainBottomNavigatorTheme"
+        app:menu="@menu/bottom_navigation_menu"
+        app:itemIconSize="@dimen/bottom_navigation_icon_size"
+        app:itemBackground="@color/white"
+        app:itemTextColor="#7F7F85"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

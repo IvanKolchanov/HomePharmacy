@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:id="@+id/toolbar"
-        android:title="Some shit"
+        android:title=""
         android:layout_gravity="center_horizontal"
         android:theme="@style/Toolbar"/>
 
