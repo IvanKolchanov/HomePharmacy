@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/drugs_bottom_menu_item"
+        android:id="@+id/drugs_destination_fragment"
         android:enabled="true"
         android:icon="@drawable/drug_item_icon_selector"
         android:title="@string/first_bottom_navigation_item_text"/>
     <item
-        android:id="@+id/calendar_bottom_menu_item"
+        android:id="@+id/calendar_destination_fragment"
         android:enabled="true"
         android:title="@string/second_bottom_navigation_item_text"
         android:icon="@drawable/calendar_item_icon_selector"/>

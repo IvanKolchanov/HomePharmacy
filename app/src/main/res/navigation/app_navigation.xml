@@ -6,22 +6,17 @@
     app:startDestination="@id/drugs_destination_fragment">
 
     <fragment
-        android:id="@+id/calendar_destination_fragment"
-        android:name="com.example.homepharmacy.navigationfragments.CalendarFragment"
-        android:label="fragment_calendar"
-        tools:layout="@layout/fragment_calendar" >
-        <action
-            android:id="@+id/action_calendarFragment_to_drugsFragment"
-            app:destination="@id/drugs_destination_fragment" />
+        android:id="@+id/drugs_destination_fragment"
+        android:name="com.example.homepharmacy.navigationfragments.DrugsFragment"
+        android:label="Лекарства"
+        tools:layout="@layout/fragment_drugs">
     </fragment>
 
     <fragment
-        android:id="@+id/drugs_destination_fragment"
-        android:name="com.example.homepharmacy.navigationfragments.DrugsFragment"
-        android:label="fragment_drugs"
-        tools:layout="@layout/fragment_drugs">
-        <action
-            android:id="@+id/action_drugsFragment_to_calendarFragment"
-            app:destination="@id/calendar_destination_fragment" />
+        android:id="@+id/calendar_destination_fragment"
+        android:name="com.example.homepharmacy.navigationfragments.CalendarFragment"
+        android:label="Календарь приёма"
+        tools:layout="@layout/fragment_calendar">
     </fragment>
+
 </navigation>
