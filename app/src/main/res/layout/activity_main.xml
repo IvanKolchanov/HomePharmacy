@@ -5,16 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:id="@+id/drugs_screen">
-
-    <androidx.appcompat.widget.Toolbar
-        app:layout_constraintTop_toTopOf="@id/drugs_screen"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        android:id="@+id/main_activity_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:theme="@style/ThemeOverlay.AppCompat.Light"/>
+    android:id="@+id/main_screen">
 
     <androidx.fragment.app.FragmentContainerView
         android:layout_width="match_parent"

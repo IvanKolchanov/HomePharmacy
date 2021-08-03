@@ -3,5 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".navigationfragments.DrugsFragment">
+
+    <com.example.core_ui.MedicineCustomToolbar
+        app:medicine_toolbar_title="@string/medicine_title"
+        android:id="@+id/medicine_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"/>
+
 </FrameLayout>

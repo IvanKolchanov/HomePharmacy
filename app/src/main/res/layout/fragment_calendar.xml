@@ -3,5 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     tools:context=".navigationfragments.CalendarFragment">
+
+    <com.example.core_ui.MyCustomToolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        app:toolbar_title="@string/app_name"
+        app:button_text="@string/app_name"/>
+
 </FrameLayout>
