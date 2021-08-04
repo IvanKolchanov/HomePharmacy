@@ -4,14 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
     tools:context=".navigationfragments.CalendarFragment">
 
-    <com.example.core_ui.MyCustomToolbar
-        android:id="@+id/my_toolbar"
+    <com.example.core_ui.CalendarCustomToolbar
+        app:calendar_toolbar_title="@string/calendar_title"
+        android:id="@+id/calendar_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        app:toolbar_title="@string/app_name"
-        app:button_text="@string/app_name"/>
-
+        android:layout_height="?attr/actionBarSize"/>
 </FrameLayout>

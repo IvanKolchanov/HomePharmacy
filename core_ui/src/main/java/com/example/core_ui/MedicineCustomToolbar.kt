@@ -5,7 +5,6 @@ import android.util.AttributeSet
 import android.view.View
 import androidx.appcompat.widget.Toolbar
 import com.example.core_ui.databinding.MedicineCustomToolbarBinding
-import com.example.core_ui.databinding.MyCustomToolbarBinding
 
 class MedicineCustomToolbar
 @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0)
@@ -35,8 +34,8 @@ class MedicineCustomToolbar
     }
 
 
-    fun setOnClickListener(click: (() -> Unit)? = null) {
-        _binding?.medicineToolbarButton?.setOnClickListener {
+    fun setOnClickListenerAddButton(click: (() -> Unit)? = null) {
+        _binding?.medicineToolbarAddButton?.setOnClickListener {
             click?.invoke()
         }
     }

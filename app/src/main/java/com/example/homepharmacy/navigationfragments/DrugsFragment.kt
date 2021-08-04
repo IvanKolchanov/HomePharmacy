@@ -16,6 +16,6 @@ class DrugsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val toolbar: MedicineCustomToolbar = view.findViewById(R.id.medicine_toolbar)
-        toolbar.setOnClickListener { print("meow") }
+        toolbar.setOnClickListenerAddButton {}
     }
 }

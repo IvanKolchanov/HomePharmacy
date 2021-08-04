@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="MyCustomToolbar">
-        <attr name="toolbar_title" format="reference" />
-        <attr name="button_text" format="reference" />
-    </declare-styleable>
-
     <declare-styleable name="MedicineCustomToolbar">
         <attr name="medicine_toolbar_title" format="reference"/>
     </declare-styleable>
 
-
+    <declare-styleable name="CalendarCustomToolbar">
+        <attr name="calendar_toolbar_title" format="reference"/>
+    </declare-styleable>
 </resources>
