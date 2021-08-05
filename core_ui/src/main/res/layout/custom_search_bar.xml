@@ -9,7 +9,7 @@
         android:id="@+id/search_bar_loop"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="12dp"
         android:background="@null"
         android:scaleType="fitXY"
         android:src="@drawable/ic_loupe_grey"
@@ -18,17 +18,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:singleLine="true"
-        android:hint="Поиск"
-        android:textColorHint="@color/main_grey"
         android:id="@+id/search_bar_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="48dp"
+        android:hint="@string/search_title"
+        android:singleLine="true"
+        android:textColorHint="@color/main_grey"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/search_bar_loop"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
