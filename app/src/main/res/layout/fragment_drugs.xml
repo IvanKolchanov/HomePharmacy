@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".navigationfragments.DrugsFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,11 +18,23 @@
             app:medicine_toolbar_title="@string/medicine_title" />
 
         <com.example.core_ui.CustomSearchBar
-            app:layout_constraintTop_toBottomOf="@id/medicine_toolbar"
+            android:id="@+id/medicine_search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
+            app:layout_constraintTop_toBottomOf="@id/medicine_toolbar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/notifications_recycle_view"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"/>
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="16dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/medicine_search_bar"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -1,22 +1,16 @@
 package com.example.core_ui
 
-import android.content.Context
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
-import android.util.AttributeSet
-import android.view.View
-import androidx.constraintlayout.widget.ConstraintLayout
-import com.example.core_ui.databinding.MedicineWarningElementBinding
+import android.graphics.drawable.Drawable
 
 class MedicineWarningElement
-@JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0)
-    : ConstraintLayout(context, attrs, defStyleAttr) {
-
-    private var _binding: MedicineWarningElementBinding? = null
+constructor(medicineFormImage: Drawable, warningTypeText: String, warningReasonText: String){
+    var medicineFormImage: Drawable? = null
+    var warningTypeText: String? = null
+    var warningReasonText: String? = null
 
     init {
-        val view = View.inflate(context, R.layout.medicine_warning_element, this)
-        _binding = MedicineWarningElementBinding.bind(view)
-        this.background = ColorDrawable(Color.TRANSPARENT)
+        this.medicineFormImage = medicineFormImage
+        this.warningTypeText = warningTypeText
+        this.warningReasonText = warningReasonText
     }
 }
