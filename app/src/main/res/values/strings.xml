@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">Домаптека</string>
-    <string name="medicine_title">Лекарства</string>
     <string name="calendar_title">Календарь</string>
 </resources>

@@ -19,6 +19,5 @@ class CustomSearchBar
         _binding = CustomSearchBarBinding.bind(view)
         this.background = ColorDrawable(Color.TRANSPARENT)
         _binding?.searchBarText?.background = ColorDrawable(Color.TRANSPARENT)
-
     }
 }

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/drugs_destination_fragment"
-        android:name="com.example.homepharmacy.navigationfragments.DrugsFragment"
+        android:name="com.example.feature_medicine.ui.DrugsFragment"
         android:label="Лекарства"
         tools:layout="@layout/fragment_drugs">
     </fragment>
