@@ -1,15 +1,18 @@
-package com.example.homepharmacy.navigationfragments
+package com.example.feature_calendar.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CalendarView
 import androidx.fragment.app.Fragment
 import com.example.core_ui.CalendarCustomToolbar
-import com.example.core_ui.MedicineCustomToolbar
-import com.example.homepharmacy.R
+import com.example.feature_calendar.R
+import com.example.feature_calendar.databinding.FragmentCalendarBinding
 
 class CalendarFragment : Fragment() {
+
+    private lateinit var binding: FragmentCalendarBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_calendar, container, false)
@@ -17,8 +20,10 @@ class CalendarFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val toolbar: CalendarCustomToolbar = view.findViewById(R.id.calendar_toolbar)
-        toolbar.setOnClickListenerAddButton {}
-        toolbar.setOnClickListenerSearchButton {}
+        binding = FragmentCalendarBinding.bind(view).apply {
+            calendarToolbar.setOnClickListenerAddButton {}
+            calendarToolbar.setOnClickListenerSearchButton {}
+
+        }
     }
 }

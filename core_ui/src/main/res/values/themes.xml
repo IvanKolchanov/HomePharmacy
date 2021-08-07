@@ -1,6 +1,7 @@
 <resources>
     <!-- Base application theme. -->
     <style name="Theme.HomePharmacy" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="materialCalendarTheme">@style/CalendarTheme</item>
     </style>
 
 
@@ -12,8 +13,26 @@
         <item name="android:background">@color/white</item>
     </style>
 
-    <style name="WarningsRecycleViewTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="GreenRecycleViewTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/main_green</item>
+    </style>
+
+    <style name="GreyRecycleViewTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/main_grey</item>
+    </style>
+
+    <style name="CalendarTheme" parent="Widget.MaterialComponents.MaterialCalendar">
+        <item name="daySelectedStyle">@style/CalendarViewDaySelectedStyle</item>
+    </style>
+
+    <style name="CalendarViewDaySelectedStyle" parent="Widget.MaterialComponents.MaterialCalendar.Day.Selected">
+        <item name="itemFillColor">@color/main_green</item>
+        <item name="itemTextColor">@color/black</item>
+        <item name="itemStrokeWidth">0dp</item>
+    </style>
+
+    <style name="CalendarViewCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textSize">16sp</item>
     </style>
 
 </resources>
