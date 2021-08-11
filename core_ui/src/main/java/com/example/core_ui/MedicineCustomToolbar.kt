@@ -39,7 +39,6 @@ class MedicineCustomToolbar
             click?.invoke()
         }
     }
-
 }
 
 

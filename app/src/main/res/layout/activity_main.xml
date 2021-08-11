@@ -20,7 +20,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/main_activity_bottom_navigation"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:background="?android:attr/windowBackground"
         app:itemIconSize="@dimen/bottom_navigation_icon_size"
         app:itemRippleColor="@color/main_green"

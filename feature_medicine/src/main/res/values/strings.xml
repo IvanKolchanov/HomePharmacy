@@ -2,4 +2,7 @@
 <resources>
     <string name="medicine_title">Лекарства</string>
     <string name="categories_title">Категории</string>
+    <string name="by_alphabet_title">По алфавиту</string>
+    <string name="by_expiration_date_title">По сроку годности</string>
+    <string name="by_amount_title">По количеству</string>
 </resources>

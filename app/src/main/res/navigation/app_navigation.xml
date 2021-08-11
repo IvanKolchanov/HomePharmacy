@@ -7,9 +7,13 @@
 
     <fragment
         android:id="@+id/drugs_destination_fragment"
-        android:name="com.example.feature_medicine.ui.DrugsFragment"
+        android:name="com.example.feature_medicine.ui.MedicineFragment"
         android:label="Лекарства"
         tools:layout="@layout/fragment_drugs">
+        <action
+            android:id="@+id/action_drugs_destination_fragment_to_all_medicine_destination_fragment"
+            app:destination="@id/all_medicine_destination_fragment"
+            app:popUpTo="@id/drugs_destination_fragment" />
     </fragment>
 
     <fragment
@@ -18,5 +22,10 @@
         android:label="Календарь приёма"
         tools:layout="@layout/fragment_calendar">
     </fragment>
+    <fragment
+        android:id="@+id/all_medicine_destination_fragment"
+        android:name="com.example.feature_medicine.ui.AllMedicineFragment"
+        android:label="Все лекарства"
+        tools:layout="@layout/fragment_all_medicine" />
 
 </navigation>

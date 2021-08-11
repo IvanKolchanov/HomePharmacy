@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.feature_medicine.R
+import com.example.feature_medicine.data.MedicineWarningElement
 import com.example.feature_medicine.databinding.AllMedicineElementBinding
 import com.example.feature_medicine.databinding.MedicineWarningElementBinding
 
@@ -14,8 +15,10 @@ private const val OTHER_ITEMS_VIEW_TYPE = 2
 
 
 class MedicineWarningElementAdapter(
-        private val medicineWarningElements: ArrayList<MedicineWarningElement>
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
+    val medicineWarningElements: ArrayList<MedicineWarningElement> = arrayListOf()
+    var onAllMedicineItemClick: (() -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return if (viewType == FIRST_ITEM_VIEW_TYPE) {
@@ -41,12 +44,15 @@ class MedicineWarningElementAdapter(
         if (holder.itemViewType == OTHER_ITEMS_VIEW_TYPE) {
             val currentWarningElement: MedicineWarningElement = medicineWarningElements[position]
             holder as MedicineWarningElementViewHolder
-            holder.medicineWarningElementBinding.medicineFormIcon.setImageDrawable(currentWarningElement.medicineFormImage)
+            holder.medicineWarningElementBinding.medicineFormIcon.setImageResource(currentWarningElement.medicineFormImage)
             holder.medicineWarningElementBinding.medicineWarningType.text = currentWarningElement.warningTypeText
             holder.medicineWarningElementBinding.medicineWarningCause.text = currentWarningElement.warningReasonText
         } else {
             holder as AllMedicineViewHolder
             holder.allMedicineElementBinding.allMedicineNumber.text = 13.toString()
+            holder.itemView.setOnClickListener {
+                onAllMedicineItemClick?.invoke()
+            }
         }
     }
 
