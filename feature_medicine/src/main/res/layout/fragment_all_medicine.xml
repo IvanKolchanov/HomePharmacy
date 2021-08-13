@@ -59,7 +59,10 @@
                 app:layout_constraintEnd_toEndOf="parent"/>
 
             <androidx.recyclerview.widget.RecyclerView
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:id="@+id/all_medicine_recycle_view"
+                android:theme="@style/GreyRecycleViewTheme"
+                android:layout_marginTop="12dp"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_alignParentBottom="true"

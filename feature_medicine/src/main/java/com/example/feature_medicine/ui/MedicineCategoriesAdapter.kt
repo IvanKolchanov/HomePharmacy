@@ -11,21 +11,23 @@ import com.example.feature_medicine.R
 import com.example.feature_medicine.databinding.CategoryElementBinding
 import com.example.feature_medicine.ui.MedicineCategoriesAdapter.*
 
-class MedicineCategoriesAdapter(private val categoriesNames: LiveData<ArrayList<String>>
+class MedicineCategoriesAdapter(
 ) : RecyclerView.Adapter<ViewHolder>() {
+
+    val categoriesNames: ArrayList<String> = arrayListOf()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.category_element, parent, false)
         return ViewHolder(view)
     }
 
-    override fun getItemCount(): Int = categoriesNames.value!!.size
+    override fun getItemCount(): Int = categoriesNames.size
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
         val binding = CategoryElementBinding.bind(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.binding.categoryButton.text = categoriesNames.value!![position]
+        holder.binding.categoryButton.text = categoriesNames[position]
         holder.binding.categoryButton.background = ColorDrawable(Color.TRANSPARENT)
     }
 }

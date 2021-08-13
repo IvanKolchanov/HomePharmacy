@@ -1,3 +1,4 @@
+include ':global_data'
 include ':feature_calendar'
 include ':feature_medicine'
 include ':core_ui'

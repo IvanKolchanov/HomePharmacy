@@ -31,33 +31,44 @@ class MedicineFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //getting viewModel
         medicineViewModel = ViewModelProvider(this).get(MedicineViewModel::class.java)
-        //getting binding
         binding = FragmentDrugsBinding.bind(view)
+
         //initializing views
         medicineToolbar = binding.medicineToolbar
         notificationsRecyclerView = binding.notificationsRecyclerView
         categoriesRecyclerView = binding.categoriesRecyclerView
-        //setting medicineToolbar on addButton click listener
-        medicineToolbar?.setOnClickListenerAddButton {}
-        //setting notificationsRecyclerView adapter
-        notificationsRecyclerView?.adapter = MedicineWarningElementAdapter( ).apply {
-            onAllMedicineItemClick = { findNavController().navigate(R.id.all_medicine_destination_fragment) }
 
+        medicineToolbar?.setOnClickListenerAddButton {}
+
+        notificationsRecyclerView?.adapter = MedicineWarningElementAdapter().apply {
+            onAllMedicineItemClick = { findNavController().navigate(R.id.all_medicine_destination_fragment) }
         }
         //creating an observer that will monitor if medicineWarningElements had changed
-        medicineViewModel.medicines.observe (viewLifecycleOwner, { medicinesList ->
+        medicineViewModel.medicines.observe(viewLifecycleOwner, { medicinesList ->
             (notificationsRecyclerView?.adapter as MedicineWarningElementAdapter).medicineWarningElements.clear()
             (notificationsRecyclerView?.adapter as MedicineWarningElementAdapter).medicineWarningElements.addAll(medicinesList)
             (notificationsRecyclerView?.adapter as MedicineWarningElementAdapter).notifyDataSetChanged()
         })
+
         //adding item decoration to notification recycle view
         notificationsRecyclerView?.addItemDecoration(DividerItemDecoration(context, LinearLayoutManager.HORIZONTAL).apply {
             setDrawable(ResourcesCompat.getDrawable(resources, R.drawable.recycle_view_horizontal_separation_drawable, null)!!)
         })
-        //setting up categoriesRecyclerView adapter
-        categoriesRecyclerView?.adapter = MedicineCategoriesAdapter(medicineViewModel.categories)
+
+        categoriesRecyclerView?.adapter = MedicineCategoriesAdapter()
+        //creating an observer for categories list
+        medicineViewModel.categories.observe(viewLifecycleOwner, { categoriesList ->
+            (categoriesRecyclerView?.adapter as MedicineCategoriesAdapter).categoriesNames.clear()
+            (categoriesRecyclerView?.adapter as MedicineCategoriesAdapter).categoriesNames.addAll(categoriesList)
+            (categoriesRecyclerView?.adapter as MedicineCategoriesAdapter).notifyDataSetChanged()
+        })
+
+        medicineViewModel.personalMedicineNumber.observe(viewLifecycleOwner, {personalMedicineNumber ->
+            (notificationsRecyclerView?.adapter as MedicineWarningElementAdapter).personalMedicineNumber = personalMedicineNumber
+            (notificationsRecyclerView?.adapter as MedicineWarningElementAdapter).notifyDataSetChanged()
+        })
+
         //adding item decoration to categoriesRecyclerView
         categoriesRecyclerView?.addItemDecoration(DividerItemDecoration(context, LinearLayoutManager.VERTICAL).apply {
             setDrawable(ResourcesCompat.getDrawable(resources, R.drawable.recycle_view_vertical_separation_drawable, null)!!)

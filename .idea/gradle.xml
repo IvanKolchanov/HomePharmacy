@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/core_ui" />
             <option value="$PROJECT_DIR$/feature_calendar" />
             <option value="$PROJECT_DIR$/feature_medicine" />
+            <option value="$PROJECT_DIR$/global_data" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -14,6 +14,9 @@
             android:id="@+id/action_drugs_destination_fragment_to_all_medicine_destination_fragment"
             app:destination="@id/all_medicine_destination_fragment"
             app:popUpTo="@id/drugs_destination_fragment" />
+        <action
+            android:id="@+id/action_drugs_destination_fragment_to_medicine_info_destionation_fragment"
+            app:destination="@id/medicine_info_destionation_fragment" />
     </fragment>
 
     <fragment
@@ -27,5 +30,10 @@
         android:name="com.example.feature_medicine.ui.AllMedicineFragment"
         android:label="Все лекарства"
         tools:layout="@layout/fragment_all_medicine" />
+    <fragment
+        android:id="@+id/medicine_info_destionation_fragment"
+        android:name="com.example.feature_medicine.ui.FragmentMedicineInfo"
+        android:label="fragment_medicine_info"
+        tools:layout="@layout/fragment_medicine_info" />
 
 </navigation>

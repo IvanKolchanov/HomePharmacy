@@ -8,17 +8,18 @@ import com.example.feature_medicine.R
 import com.example.feature_medicine.data.MedicineWarningElement
 import com.example.feature_medicine.databinding.AllMedicineElementBinding
 import com.example.feature_medicine.databinding.MedicineWarningElementBinding
+import com.example.global_data.data.PersonalMedicineRepository
 
 
 private const val FIRST_ITEM_VIEW_TYPE = 1
 private const val OTHER_ITEMS_VIEW_TYPE = 2
 
 
-class MedicineWarningElementAdapter(
-) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class MedicineWarningElementAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     val medicineWarningElements: ArrayList<MedicineWarningElement> = arrayListOf()
     var onAllMedicineItemClick: (() -> Unit)? = null
+    var personalMedicineNumber: Int = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return if (viewType == FIRST_ITEM_VIEW_TYPE) {
@@ -49,7 +50,7 @@ class MedicineWarningElementAdapter(
             holder.medicineWarningElementBinding.medicineWarningCause.text = currentWarningElement.warningReasonText
         } else {
             holder as AllMedicineViewHolder
-            holder.allMedicineElementBinding.allMedicineNumber.text = 13.toString()
+            holder.allMedicineElementBinding.allMedicineNumber.text = personalMedicineNumber.toString()
             holder.itemView.setOnClickListener {
                 onAllMedicineItemClick?.invoke()
             }

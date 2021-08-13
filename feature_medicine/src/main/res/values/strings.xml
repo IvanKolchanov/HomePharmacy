@@ -5,4 +5,5 @@
     <string name="by_alphabet_title">По алфавиту</string>
     <string name="by_expiration_date_title">По сроку годности</string>
     <string name="by_amount_title">По количеству</string>
+    <string name="fresh_until_title">Годен до:</string>
 </resources>

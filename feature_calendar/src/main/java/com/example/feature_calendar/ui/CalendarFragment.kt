@@ -39,8 +39,9 @@ class CalendarFragment : Fragment() {
             calendarToolbar.setOnClickListenerSearchButton {}
 
             //bottom sheet settings
-            var bottomSheetBehavior = BottomSheetBehavior.from(medicineNotificationsBottomSheet)
+            val bottomSheetBehavior = BottomSheetBehavior.from(medicineNotificationsBottomSheet)
             bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+            bottomSheetStateArrow.setOnClickListener { bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED }
             bottomSheetBehavior.isHideable = false
             bottomSheetBehavior.isFitToContents = false
             bottomSheetBehavior.peekHeight = 96
@@ -69,8 +70,6 @@ class CalendarFragment : Fragment() {
             }
 
             bottomSheetBehavior.addBottomSheetCallback(bottomSheetCallback)
-
-
 
             //setting bottom sheet title date and it's listener
             val calendar : Calendar = Calendar.getInstance()
