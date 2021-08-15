@@ -7,4 +7,8 @@
     <declare-styleable name="CalendarCustomToolbar">
         <attr name="calendar_toolbar_title" format="reference"/>
     </declare-styleable>
+
+    <declare-styleable name="MedicineInfoCustomToolbar">
+        <attr name="isMedicineCreated" format="boolean"/>
+    </declare-styleable>
 </resources>

@@ -39,7 +39,9 @@ class MedicineFragment : Fragment() {
         notificationsRecyclerView = binding.notificationsRecyclerView
         categoriesRecyclerView = binding.categoriesRecyclerView
 
-        medicineToolbar?.setOnClickListenerAddButton {}
+        medicineToolbar?.setOnClickListenerAddButton {
+            findNavController().navigate(R.id.medicine_info_destination_fragment)
+        }
 
         notificationsRecyclerView?.adapter = MedicineWarningElementAdapter().apply {
             onAllMedicineItemClick = { findNavController().navigate(R.id.all_medicine_destination_fragment) }
