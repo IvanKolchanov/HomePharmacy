@@ -44,4 +44,12 @@
         <item name="android:textFontWeight">500</item>
         <item name="android:textStyle">normal</item>
     </style>
+
+    <style name="CustomMedicineInfoRowTextAppearance" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="android:textFontWeight">450</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
 </resources>

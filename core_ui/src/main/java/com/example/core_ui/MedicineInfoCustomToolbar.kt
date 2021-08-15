@@ -41,4 +41,15 @@ class MedicineInfoCustomToolbar
         }
     }
 
+    fun setOnClickListenerBackButton(click: (() -> Unit)? = null) {
+        _binding.medicineInfoBackButton.setOnClickListener {
+            click?.invoke()
+        }
+    }
+
+    fun setOnClickListenerRightButton(click: (() -> Unit)? = null) {
+        _binding.medicineInfoRightButton.setOnClickListener {
+            click?.invoke()
+        }
+    }
 }
