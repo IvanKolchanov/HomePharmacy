@@ -19,237 +19,428 @@
             app:isMedicineCreated="false"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <RelativeLayout
-            android:id="@+id/base_medicine_info_big_element"
-            android:layout_width="0dp"
-            android:layout_height="148dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/medicine_info_big_element_round_corners"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:theme="@style/GreyRecycleViewTheme"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/medicineInfoCustomToolbar">
 
-            <TextView
-                android:id="@+id/medicine_name_row_text"
-                style="@style/CustomMedicineInfoRowTextAppearance"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="20dp"
-                android:gravity="center_vertical"
-                android:text="@string/medicine_name_title_text"
-                tools:text="Название лекарства" />
-
-            <View
-                android:id="@+id/z_1_divide_line"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_below="@+id/medicine_name_row_text"
-                android:layout_marginStart="16dp"
-                android:background="@color/search_grey"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/medicine_type_row_text"
-                style="@style/CustomMedicineInfoRowTextAppearance"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_below="@+id/z_1_divide_line"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="20dp"
-                android:gravity="center_vertical"
-                android:text="@string/type_title_text"
-                tools:text="Тип" />
+                <RelativeLayout
+                    android:id="@+id/base_medicine_info_big_element"
+                    android:layout_width="0dp"
+                    android:layout_height="148dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/medicine_info_big_element_round_corners"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-            <View
-                android:id="@+id/z_2_divide_line"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_below="@+id/medicine_type_row_text"
-                android:layout_marginStart="16dp"
-                android:background="@color/search_grey"
-                app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/medicine_name_row_text"
+                        style="@style/CustomMedicineInfoRowTextAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="20dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/medicine_name_title_text"
+                        tools:text="Название лекарства" />
 
-            <TextView
-                android:id="@+id/medicine_category_row_text"
-                style="@style/CustomMedicineInfoRowTextAppearance"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_below="@id/z_2_divide_line"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="20dp"
-                android:gravity="center_vertical"
-                android:text="@string/category_title_text"
-                tools:text="Категория" />
+                    <EditText
+                        android:id="@+id/medicine_name_row_edit_text"
+                        style="@style/CustomMedicineInfoRowTextAppearance"
+                        android:layout_width="134dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="8dp"
+                        android:backgroundTint="@color/white"
+                        android:gravity="center_vertical"
+                        android:hint="@string/medicine_name_hint_text"
+                        android:textColorHint="@color/main_grey"
+                        android:layout_alignParentEnd="true"
+                        tools:hint="Название"/>
 
-        </RelativeLayout>
+                    <View
+                        android:id="@+id/z_1_divide_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_below="@+id/medicine_name_row_text"
+                        android:layout_marginStart="16dp"
+                        android:background="@color/search_grey"
+                        app:layout_constraintTop_toTopOf="parent" />
 
+                    <TextView
+                        android:id="@+id/medicine_type_row_text"
+                        style="@style/CustomMedicineInfoRowTextAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_below="@+id/z_1_divide_line"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="20dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/type_title_text"
+                        tools:text="Тип" />
 
-        <RelativeLayout
-            android:id="@+id/amount_medicine_info_big_element"
-            android:layout_width="0dp"
-            android:layout_height="148dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/medicine_info_big_element_round_corners"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/base_medicine_info_big_element">
+                    <TextView
+                        android:id="@+id/z_text_view_type"
+                        style="@style/CustomMedicineInfoRowTextAppearance"
+                        android:layout_below="@+id/z_1_divide_line"
+                        android:layout_toStartOf="@id/image_button_type"
+                        android:layout_width="120dp"
+                        android:layout_height="48dp"
+                        android:gravity="center_vertical|right"
+                        tools:text="Таблетки"/>
 
-            <TextView
-                android:id="@+id/fresh_until_text_view"
-                style="@style/CustomMedicineInfoRowTextAppearance"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="20dp"
-                android:gravity="center_vertical"
-                android:text="@string/fresh_until_title"
-                tools:text="Годен до" />
+                    <ImageButton
+                        android:id="@+id/image_button_type"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:scaleType="fitXY"
+                        android:background="@null"
+                        android:src="@drawable/ic_arrow_right"
+                        android:layout_below="@id/z_1_divide_line"
+                        android:layout_alignParentEnd="true"/>
 
-            <View
-                android:id="@+id/z_4_divide_line"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_below="@+id/fresh_until_text_view"
-                android:layout_marginStart="16dp"
-                android:background="@color/search_grey"
-                app:layout_constraintTop_toTopOf="parent" />
+                    <View
+                        android:id="@+id/z_2_divide_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_below="@+id/medicine_type_row_text"
+                        android:layout_marginStart="16dp"
+                        android:background="@color/search_grey"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/medicine_max_amount_row_text"
-                style="@style/CustomMedicineInfoRowTextAppearance"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_below="@+id/z_4_divide_line"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="20dp"
-                android:gravity="center_vertical"
-                android:text="@string/max_amount_title_text"
-                tools:text="Количество в упаковке" />
+                    <TextView
+                        android:id="@+id/medicine_category_row_text"
+                        style="@style/CustomMedicineInfoRowTextAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_below="@id/z_2_divide_line"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="20dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/category_title_text"
+                        tools:text="Категория" />
 
-            <View
-                android:id="@+id/z_5_divide_line"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_below="@+id/medicine_max_amount_row_text"
-                android:layout_marginStart="16dp"
-                android:background="@color/search_grey"
-                app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/z_text_view_category"
+                        style="@style/CustomMedicineInfoRowTextAppearance"
+                        android:layout_below="@+id/z_2_divide_line"
+                        android:layout_toStartOf="@id/image_button_category"
+                        android:layout_width="120dp"
+                        android:layout_height="48dp"
+                        android:gravity="center_vertical|right"
+                        tools:text="Грипп"/>
 
-            <TextView
-                android:id="@+id/medicine_left_amount_row_text"
-                style="@style/CustomMedicineInfoRowTextAppearance"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_below="@id/z_5_divide_line"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="20dp"
-                android:gravity="center_vertical"
-                android:text="@string/current_amount_title_text"
-                tools:text="Оставшееся количество" />
+                    <ImageButton
+                        android:id="@+id/image_button_category"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:scaleType="fitXY"
+                        android:background="@null"
+                        android:src="@drawable/ic_arrow_right"
+                        android:layout_below="@id/z_2_divide_line"
+                        android:layout_alignParentEnd="true"/>
 
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/taking_medicine_info_big_element"
-            android:layout_width="0dp"
-            android:layout_height="148dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/medicine_info_big_element_round_corners"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/amount_medicine_info_big_element">
-
-            <TextView
-                android:id="@+id/taking_oftenness_row_text"
-                style="@style/CustomMedicineInfoRowTextAppearance"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="20dp"
-                android:gravity="center_vertical"
-                android:text="@string/oftenness_of_taking_title_text"
-                tools:text="Частота приёма" />
-
-            <View
-                android:id="@+id/z_6_divide_line"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_below="@id/taking_oftenness_row_text"
-                android:layout_marginStart="16dp"
-                android:background="@color/search_grey"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/oftenness_per_unit_row_text"
-                style="@style/CustomMedicineInfoRowTextAppearance"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_below="@+id/z_6_divide_line"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="20dp"
-                android:gravity="center_vertical"
-                android:text="@string/how_many_times_a_day_title_text"
-                tools:text="Сколько раз в день" />
-
-            <View
-                android:id="@+id/z_7_divide_line"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_below="@+id/oftenness_per_unit_row_text"
-                android:layout_marginStart="16dp"
-                android:background="@color/search_grey"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/taking_finishig_date_row_text"
-                style="@style/CustomMedicineInfoRowTextAppearance"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_below="@id/z_7_divide_line"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="20dp"
-                android:gravity="center_vertical"
-                android:text="@string/finishing_date_title_text"
-                tools:text="Дата завершения приёма" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/notes_element"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/medicine_information_item_round_corners"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/taking_medicine_info_big_element">
-
-            <EditText
-                android:id="@+id/notes_text"
-                style="@style/CustomMedicineInfoRowTextAppearance"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:gravity="center_vertical"
-                android:hint="@string/notes_title_text"
-                android:backgroundTint="@color/white"
-                android:textColor="@color/main_grey"
-                tools:text="Заметки"/>
-
-        </RelativeLayout>
+                </RelativeLayout>
 
 
+                <RelativeLayout
+                    android:id="@+id/amount_medicine_info_big_element"
+                    android:layout_width="0dp"
+                    android:layout_height="148dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/medicine_info_big_element_round_corners"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/base_medicine_info_big_element">
 
+                    <TextView
+                        android:id="@+id/fresh_until_text_view"
+                        style="@style/CustomMedicineInfoRowTextAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="20dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/fresh_until_title"
+                        tools:text="Годен до" />
+
+                    <TextView
+                        android:id="@+id/z_text_view_fresh_until"
+                        style="@style/CustomMedicineInfoRowTextAppearance"
+                        android:layout_toStartOf="@id/image_button_fresh_until"
+                        android:layout_width="120dp"
+                        android:layout_height="48dp"
+                        android:gravity="center_vertical|right"
+                        android:text="@string/date_text_title"
+                        tools:text="Дата"/>
+
+                    <ImageButton
+                        android:id="@+id/image_button_fresh_until"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:scaleType="fitXY"
+                        android:background="@null"
+                        android:src="@drawable/ic_arrow_right"
+                        android:layout_alignParentEnd="true"/>
+
+                    <View
+                        android:id="@+id/z_4_divide_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_below="@+id/fresh_until_text_view"
+                        android:layout_marginStart="16dp"
+                        android:background="@color/search_grey"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/medicine_max_amount_row_text"
+                        style="@style/CustomMedicineInfoRowTextAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_below="@+id/z_4_divide_line"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="20dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/max_amount_title_text"
+                        tools:text="Количество в упаковке" />
+
+                    <TextView
+                        android:id="@+id/z_text_view_max_amount"
+                        style="@style/CustomMedicineInfoRowTextAppearance"
+                        android:layout_below="@+id/z_4_divide_line"
+                        android:layout_toStartOf="@id/image_button_max_amount"
+                        android:layout_width="80dp"
+                        android:layout_height="48dp"
+                        android:gravity="center_vertical|right"
+                        tools:text="0 таб."/>
+
+                    <ImageButton
+                        android:id="@+id/image_button_max_amount"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:scaleType="fitXY"
+                        android:background="@null"
+                        android:src="@drawable/ic_arrow_right"
+                        android:layout_below="@id/z_4_divide_line"
+                        android:layout_alignParentEnd="true"/>
+
+                    <View
+                        android:id="@+id/z_5_divide_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_below="@+id/medicine_max_amount_row_text"
+                        android:layout_marginStart="16dp"
+                        android:background="@color/search_grey"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/medicine_left_amount_row_text"
+                        style="@style/CustomMedicineInfoRowTextAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_below="@id/z_5_divide_line"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="20dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/current_amount_title_text"
+                        tools:text="Оставшееся количество" />
+
+                    <TextView
+                        android:id="@+id/z_text_view_сurrent_amount"
+                        style="@style/CustomMedicineInfoRowTextAppearance"
+                        android:layout_below="@+id/z_5_divide_line"
+                        android:layout_toStartOf="@id/image_button_current_amount"
+                        android:layout_width="80dp"
+                        android:layout_height="48dp"
+                        android:gravity="center_vertical|right"
+                        tools:text="0 таб."/>
+
+                    <ImageButton
+                        android:id="@+id/image_button_current_amount"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:scaleType="fitXY"
+                        android:background="@null"
+                        android:src="@drawable/ic_arrow_right"
+                        android:layout_below="@id/z_5_divide_line"
+                        android:layout_alignParentEnd="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/taking_medicine_info_big_element"
+                    android:layout_width="0dp"
+                    android:layout_height="148dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/medicine_info_big_element_round_corners"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/amount_medicine_info_big_element">
+
+                    <TextView
+                        android:id="@+id/taking_oftenness_row_text"
+                        style="@style/CustomMedicineInfoRowTextAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="20dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/oftenness_of_taking_title_text"
+                        tools:text="Частота приёма" />
+
+                    <TextView
+                        android:id="@+id/z_text_view_taking_oftenness"
+                        style="@style/CustomMedicineInfoRowTextAppearance"
+                        android:layout_toStartOf="@id/image_button_oftenness"
+                        android:layout_width="120dp"
+                        android:layout_height="48dp"
+                        android:gravity="center_vertical|right"
+                        tools:text="Ежедневно"/>
+
+                    <ImageButton
+                        android:id="@+id/image_button_oftenness"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:scaleType="fitXY"
+                        android:background="@null"
+                        android:src="@drawable/ic_arrow_right"
+                        android:layout_alignParentEnd="true"/>
+
+                    <View
+                        android:id="@+id/z_6_divide_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_below="@id/taking_oftenness_row_text"
+                        android:layout_marginStart="16dp"
+                        android:background="@color/search_grey"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/oftenness_per_unit_row_text"
+                        style="@style/CustomMedicineInfoRowTextAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_below="@+id/z_6_divide_line"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="20dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/how_many_times_a_day_title_text"
+                        tools:text="Сколько раз в день" />
+
+                    <TextView
+                        android:id="@+id/z_text_view_amount_per_unit"
+                        style="@style/CustomMedicineInfoRowTextAppearance"
+                        android:layout_below="@+id/z_6_divide_line"
+                        android:layout_toStartOf="@id/image_button_amount_per_unit"
+                        android:layout_width="80dp"
+                        android:layout_height="48dp"
+                        android:gravity="center_vertical|right"
+                        tools:text="2"/>
+
+                    <ImageButton
+                        android:id="@+id/image_button_amount_per_unit"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:scaleType="fitXY"
+                        android:background="@null"
+                        android:src="@drawable/ic_arrow_right"
+                        android:layout_below="@id/z_6_divide_line"
+                        android:layout_alignParentEnd="true"/>
+
+                    <View
+                        android:id="@+id/z_7_divide_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_below="@+id/oftenness_per_unit_row_text"
+                        android:layout_marginStart="16dp"
+                        android:background="@color/search_grey"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/taking_finishig_date_row_text"
+                        style="@style/CustomMedicineInfoRowTextAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_below="@id/z_7_divide_line"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="20dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/finishing_date_title_text"
+                        tools:text="Дата завершения приёма" />
+
+                    <TextView
+                        android:id="@+id/z_text_view_finishing_date"
+                        style="@style/CustomMedicineInfoRowTextAppearance"
+                        android:layout_below="@+id/z_7_divide_line"
+                        android:layout_toStartOf="@id/image_button_finishing_date"
+                        android:layout_width="60dp"
+                        android:layout_height="48dp"
+                        android:gravity="center_vertical|right"
+                        android:text="@string/date_text_title"
+                        tools:text="Дата"/>
+
+                    <ImageButton
+                        android:id="@+id/image_button_finishing_date"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:scaleType="fitXY"
+                        android:background="@null"
+                        android:src="@drawable/ic_arrow_right"
+                        android:layout_below="@id/z_7_divide_line"
+                        android:layout_alignParentEnd="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/notes_element"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/medicine_information_item_round_corners"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/taking_medicine_info_big_element">
+
+                    <EditText
+                        android:id="@+id/notes_text"
+                        style="@style/CustomMedicineInfoRowTextAppearance"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:backgroundTint="@color/white"
+                        android:gravity="center_vertical"
+                        android:hint="@string/notes_title_text"
+                        android:textColorHint="@color/main_grey"
+                        tools:hint="Заметки" />
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/z_last_divide_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@color/background_grey"
+                    app:layout_constraintTop_toBottomOf="@+id/notes_element" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

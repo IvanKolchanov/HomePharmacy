@@ -12,6 +12,7 @@ class MedicineInfoCustomToolbar
     : Toolbar(context, attrs, defStyleAttr) {
 
     private var _binding : MedicineInfoCustomToolbarBinding
+    private var isMedicineCreated: Boolean = false
 
     init {
         val view = View.inflate(context, R.layout.medicine_info_custom_toolbar, this)
@@ -24,7 +25,7 @@ class MedicineInfoCustomToolbar
             val attributes = context.obtainStyledAttributes(it, R.styleable.MedicineInfoCustomToolbar, 0, 0)
             with(attributes) {
                 try {
-                    val isMedicineCreated = getBoolean(R.styleable.MedicineInfoCustomToolbar_isMedicineCreated, false)
+                    isMedicineCreated = getBoolean(R.styleable.MedicineInfoCustomToolbar_isMedicineCreated, false)
                     if (isMedicineCreated) {
                         _binding.medicineInfoBackButton.visibility = View.VISIBLE
                         _binding.medicineInfoBackTextButton.visibility = View.GONE
@@ -42,8 +43,14 @@ class MedicineInfoCustomToolbar
     }
 
     fun setOnClickListenerBackButton(click: (() -> Unit)? = null) {
-        _binding.medicineInfoBackButton.setOnClickListener {
-            click?.invoke()
+        if (isMedicineCreated) {
+            _binding.medicineInfoBackButton.setOnClickListener {
+                click?.invoke()
+            }
+        }else {
+            _binding.medicineInfoBackTextButton.setOnClickListener {
+                click?.invoke()
+            }
         }
     }
 

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import com.example.feature_medicine.R
 import com.example.feature_medicine.databinding.FragmentMedicineInfoBinding
 import androidx.navigation.fragment.findNavController
@@ -26,11 +27,11 @@ class FragmentMedicineInfo : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentMedicineInfoBinding.bind(view).apply {
             medicineInfoCustomToolbar.setOnClickListenerBackButton {
-                findNavController().popBackStack()
+                Navigation.findNavController(view).popBackStack()
             }
 
             medicineInfoCustomToolbar.setOnClickListenerRightButton{
-                findNavController().popBackStack()
+                Navigation.findNavController(view).popBackStack()
             }
         }
     }

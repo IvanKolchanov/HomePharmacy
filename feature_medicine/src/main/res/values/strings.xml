@@ -6,7 +6,8 @@
     <string name="by_expiration_date_title">По сроку годности</string>
     <string name="by_amount_title">По количеству</string>
     <string name="fresh_until_title">Годен до:</string>
-    <string name="medicine_name_title_text">Наименование лкарства</string>
+    <string name="medicine_name_title_text">Название лекарства</string>
+    <string name="medicine_name_hint_text">Название</string>
     <string name="type_title_text">Тип</string>
     <string name="category_title_text">Категория</string>
     <string name="max_amount_title_text">Количество в упаковке</string>
@@ -16,4 +17,5 @@
     <string name="how_many_times_a_week_title_text">Сколько раз в неделю</string>
     <string name="finishing_date_title_text">Дата завершения приёма</string>
     <string name="notes_title_text">Заметки</string>
+    <string name="date_text_title">Дата</string>
 </resources>
