@@ -15,7 +15,7 @@
     <string name="oftenness_of_taking_title_text">Частота приёма</string>
     <string name="how_many_times_a_day_title_text">Сколько раз в день</string>
     <string name="how_many_times_a_week_title_text">Сколько раз в неделю</string>
-    <string name="finishing_date_title_text">Дата завершения приёма</string>
+    <string name="finishing_date_title_text">Завершения приёма</string>
     <string name="notes_title_text">Заметки</string>
     <string name="date_text_title">Дата</string>
 </resources>

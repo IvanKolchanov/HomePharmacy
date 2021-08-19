@@ -8,9 +8,13 @@ data class MedicineItemWholeInfo (
         //dd/MM/yy
         var startedTakingDate: String,
         var expirationDate: String,
+        var finishingTakingDate: String,
         var medicineMaxAmount: String,
         var medicineCurrentAmount: Int,
         var isAmountCountable: Boolean,
-        var medicineTakingOftenness: Int,
+        var medicineTakingOftenness: String,
         var notes: String
-)
+){
+    constructor() : this("", "", "", "", "",
+            "", "", "", 0, false, "", "")
+}

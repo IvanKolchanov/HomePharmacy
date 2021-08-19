@@ -16,6 +16,7 @@ class MedicineRepository {
     //default stuff
     val medicineCategoriesList = arrayListOf("Аллергия", "Covid-19", "Витамины и БАД", "Гастрит", "Диабет", "Дыхательная система", "Зрение", "Избыточный вес", "Изжога", "Кожные заболевания", "Личная гигиена", "Насморк", "Отит", "Проблемы с пищеварением и кишечником", "Простуда и грипп", "Сердечно-сосудистые", "Другое")
     val medicineTypeList = arrayListOf("Ампулы", "Граммы", "Дозы спрея", "Ингаляции", "Инъекции", "Использования", "Капли", "Капсулы", "Милиграммы", "Миллилитры", "Пакетики", "Пластыри", "Свечи", "Талетки", "Штуки")
+    val oftennessList = arrayListOf("Ежедневно", "Еженедельно", "По необходимости")
 
     //changing elements
     var medicineWarningElementsList = getMedicineWarningElementsList()

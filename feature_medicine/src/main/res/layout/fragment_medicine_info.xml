@@ -10,16 +10,21 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <com.example.core_ui.MedicineInfoCustomToolbar
             android:id="@+id/medicineInfoCustomToolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:isMedicineCreated="false"
+            app:layout_constraintBottom_toTopOf="@id/z_medicine_info_scroll_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ScrollView
+            android:id="@+id/z_medicine_info_scroll_view"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:theme="@style/GreyRecycleViewTheme"
@@ -51,20 +56,22 @@
                         android:layout_marginStart="20dp"
                         android:gravity="center_vertical"
                         android:text="@string/medicine_name_title_text"
-                        tools:text="Название лекарства" />
+                        tools:text="Название лекарства"
+                        tools:ignore="RelativeOverlap" />
 
                     <EditText
                         android:id="@+id/medicine_name_row_edit_text"
                         style="@style/CustomMedicineInfoRowTextAppearance"
                         android:layout_width="134dp"
                         android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
                         android:layout_marginEnd="8dp"
                         android:backgroundTint="@color/white"
                         android:gravity="center_vertical"
                         android:hint="@string/medicine_name_hint_text"
                         android:textColorHint="@color/main_grey"
-                        android:layout_alignParentEnd="true"
-                        tools:hint="Название"/>
+                        tools:hint="Название"
+                        android:inputType="text" />
 
                     <View
                         android:id="@+id/z_1_divide_line"
@@ -90,22 +97,23 @@
                     <TextView
                         android:id="@+id/z_text_view_type"
                         style="@style/CustomMedicineInfoRowTextAppearance"
+                        android:layout_width="272dp"
+                        android:layout_height="48dp"
                         android:layout_below="@+id/z_1_divide_line"
                         android:layout_toStartOf="@id/image_button_type"
-                        android:layout_width="120dp"
-                        android:layout_height="48dp"
                         android:gravity="center_vertical|right"
-                        tools:text="Таблетки"/>
+                        android:textSize="18sp"
+                        tools:text="Таблетки" />
 
                     <ImageButton
                         android:id="@+id/image_button_type"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:scaleType="fitXY"
-                        android:background="@null"
-                        android:src="@drawable/ic_arrow_right"
                         android:layout_below="@id/z_1_divide_line"
-                        android:layout_alignParentEnd="true"/>
+                        android:layout_alignParentEnd="true"
+                        android:background="@null"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_arrow_right" />
 
                     <View
                         android:id="@+id/z_2_divide_line"
@@ -131,22 +139,23 @@
                     <TextView
                         android:id="@+id/z_text_view_category"
                         style="@style/CustomMedicineInfoRowTextAppearance"
+                        android:layout_width="200dp"
+                        android:layout_height="48dp"
                         android:layout_below="@+id/z_2_divide_line"
                         android:layout_toStartOf="@id/image_button_category"
-                        android:layout_width="120dp"
-                        android:layout_height="48dp"
                         android:gravity="center_vertical|right"
-                        tools:text="Грипп"/>
+                        android:textSize="18sp"
+                        tools:text="Грипп" />
 
                     <ImageButton
                         android:id="@+id/image_button_category"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:scaleType="fitXY"
-                        android:background="@null"
-                        android:src="@drawable/ic_arrow_right"
                         android:layout_below="@id/z_2_divide_line"
-                        android:layout_alignParentEnd="true"/>
+                        android:layout_alignParentEnd="true"
+                        android:background="@null"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_arrow_right" />
 
                 </RelativeLayout>
 
@@ -172,26 +181,27 @@
                         android:layout_marginStart="20dp"
                         android:gravity="center_vertical"
                         android:text="@string/fresh_until_title"
-                        tools:text="Годен до" />
+                        tools:text="Годен до"
+                        tools:ignore="RelativeOverlap" />
 
                     <TextView
                         android:id="@+id/z_text_view_fresh_until"
                         style="@style/CustomMedicineInfoRowTextAppearance"
-                        android:layout_toStartOf="@id/image_button_fresh_until"
                         android:layout_width="120dp"
                         android:layout_height="48dp"
+                        android:layout_toStartOf="@id/image_button_fresh_until"
                         android:gravity="center_vertical|right"
                         android:text="@string/date_text_title"
-                        tools:text="Дата"/>
+                        tools:text="Дата" />
 
                     <ImageButton
                         android:id="@+id/image_button_fresh_until"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:scaleType="fitXY"
+                        android:layout_alignParentEnd="true"
                         android:background="@null"
-                        android:src="@drawable/ic_arrow_right"
-                        android:layout_alignParentEnd="true"/>
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_arrow_right" />
 
                     <View
                         android:id="@+id/z_4_divide_line"
@@ -214,25 +224,28 @@
                         android:text="@string/max_amount_title_text"
                         tools:text="Количество в упаковке" />
 
-                    <TextView
-                        android:id="@+id/z_text_view_max_amount"
+                    <EditText
+                        android:id="@+id/z_edit_text_max_amount"
                         style="@style/CustomMedicineInfoRowTextAppearance"
-                        android:layout_below="@+id/z_4_divide_line"
-                        android:layout_toStartOf="@id/image_button_max_amount"
                         android:layout_width="80dp"
                         android:layout_height="48dp"
+                        android:layout_below="@+id/z_4_divide_line"
+                        android:layout_toStartOf="@id/image_button_max_amount"
+                        android:backgroundTint="@color/white"
                         android:gravity="center_vertical|right"
-                        tools:text="0 таб."/>
+                        android:hint="0"
+                        android:inputType="number"
+                        android:textColorHint="@color/black" />
 
                     <ImageButton
                         android:id="@+id/image_button_max_amount"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:scaleType="fitXY"
-                        android:background="@null"
-                        android:src="@drawable/ic_arrow_right"
                         android:layout_below="@id/z_4_divide_line"
-                        android:layout_alignParentEnd="true"/>
+                        android:layout_alignParentEnd="true"
+                        android:background="@null"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_arrow_right" />
 
                     <View
                         android:id="@+id/z_5_divide_line"
@@ -255,25 +268,28 @@
                         android:text="@string/current_amount_title_text"
                         tools:text="Оставшееся количество" />
 
-                    <TextView
-                        android:id="@+id/z_text_view_сurrent_amount"
+                    <EditText
+                        android:id="@+id/z_edit_text_current_amount"
                         style="@style/CustomMedicineInfoRowTextAppearance"
-                        android:layout_below="@+id/z_5_divide_line"
-                        android:layout_toStartOf="@id/image_button_current_amount"
                         android:layout_width="80dp"
                         android:layout_height="48dp"
+                        android:layout_below="@+id/z_5_divide_line"
+                        android:layout_toStartOf="@id/image_button_current_amount"
+                        android:backgroundTint="@color/white"
                         android:gravity="center_vertical|right"
-                        tools:text="0 таб."/>
+                        android:hint="0"
+                        android:inputType="number"
+                        android:textColorHint="@color/black" />
 
                     <ImageButton
                         android:id="@+id/image_button_current_amount"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:scaleType="fitXY"
-                        android:background="@null"
-                        android:src="@drawable/ic_arrow_right"
                         android:layout_below="@id/z_5_divide_line"
-                        android:layout_alignParentEnd="true"/>
+                        android:layout_alignParentEnd="true"
+                        android:background="@null"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_arrow_right" />
 
                 </RelativeLayout>
 
@@ -298,25 +314,27 @@
                         android:layout_marginStart="20dp"
                         android:gravity="center_vertical"
                         android:text="@string/oftenness_of_taking_title_text"
-                        tools:text="Частота приёма" />
+                        tools:text="Частота приёма"
+                        tools:ignore="RelativeOverlap" />
 
                     <TextView
                         android:id="@+id/z_text_view_taking_oftenness"
                         style="@style/CustomMedicineInfoRowTextAppearance"
-                        android:layout_toStartOf="@id/image_button_oftenness"
-                        android:layout_width="120dp"
+                        android:layout_width="160dp"
                         android:layout_height="48dp"
+                        android:layout_toStartOf="@id/image_button_oftenness"
                         android:gravity="center_vertical|right"
-                        tools:text="Ежедневно"/>
+                        android:textSize="18sp"
+                        tools:text="Ежедневно" />
 
                     <ImageButton
                         android:id="@+id/image_button_oftenness"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:scaleType="fitXY"
+                        android:layout_alignParentEnd="true"
                         android:background="@null"
-                        android:src="@drawable/ic_arrow_right"
-                        android:layout_alignParentEnd="true"/>
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_arrow_right" />
 
                     <View
                         android:id="@+id/z_6_divide_line"
@@ -339,25 +357,28 @@
                         android:text="@string/how_many_times_a_day_title_text"
                         tools:text="Сколько раз в день" />
 
-                    <TextView
-                        android:id="@+id/z_text_view_amount_per_unit"
+                    <EditText
+                        android:id="@+id/z_edit_text_amount_per_unit"
                         style="@style/CustomMedicineInfoRowTextAppearance"
-                        android:layout_below="@+id/z_6_divide_line"
-                        android:layout_toStartOf="@id/image_button_amount_per_unit"
                         android:layout_width="80dp"
                         android:layout_height="48dp"
+                        android:layout_below="@+id/z_6_divide_line"
+                        android:layout_toStartOf="@id/image_button_amount_per_unit"
+                        android:backgroundTint="@color/white"
                         android:gravity="center_vertical|right"
-                        tools:text="2"/>
+                        android:hint="0"
+                        android:inputType="number"
+                        android:textColorHint="@color/black" />
 
                     <ImageButton
                         android:id="@+id/image_button_amount_per_unit"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:scaleType="fitXY"
-                        android:background="@null"
-                        android:src="@drawable/ic_arrow_right"
                         android:layout_below="@id/z_6_divide_line"
-                        android:layout_alignParentEnd="true"/>
+                        android:layout_alignParentEnd="true"
+                        android:background="@null"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_arrow_right" />
 
                     <View
                         android:id="@+id/z_7_divide_line"
@@ -378,28 +399,28 @@
                         android:layout_marginStart="20dp"
                         android:gravity="center_vertical"
                         android:text="@string/finishing_date_title_text"
-                        tools:text="Дата завершения приёма" />
+                        tools:text="Завершения приёма" />
 
                     <TextView
                         android:id="@+id/z_text_view_finishing_date"
                         style="@style/CustomMedicineInfoRowTextAppearance"
+                        android:layout_width="120dp"
+                        android:layout_height="48dp"
                         android:layout_below="@+id/z_7_divide_line"
                         android:layout_toStartOf="@id/image_button_finishing_date"
-                        android:layout_width="60dp"
-                        android:layout_height="48dp"
                         android:gravity="center_vertical|right"
                         android:text="@string/date_text_title"
-                        tools:text="Дата"/>
+                        tools:text="Дата" />
 
                     <ImageButton
                         android:id="@+id/image_button_finishing_date"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:scaleType="fitXY"
-                        android:background="@null"
-                        android:src="@drawable/ic_arrow_right"
                         android:layout_below="@id/z_7_divide_line"
-                        android:layout_alignParentEnd="true"/>
+                        android:layout_alignParentEnd="true"
+                        android:background="@null"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_arrow_right" />
 
                 </RelativeLayout>
 
@@ -441,6 +462,90 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/medicineInfoCustomToolbar">
+
+            <FrameLayout
+                android:id="@+id/medicine_radio_button_list_bottom_sheet"
+                style="@style/Widget.Design.BottomSheet.Modal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/medicine_radio_button_list_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="?attr/actionBarSize"
+                        android:gravity="center"
+                        android:letterSpacing="-0.03"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/medicine_radio_button_list_back_button"
+                        style="@style/CustomMedicineInfoToolbarTextAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="?attr/actionBarSize"
+                        android:layout_marginEnd="12dp"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:letterSpacing="-0.025"
+                        android:text="@string/cancel_text"
+                        android:textColor="@color/main_green"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Отмена" />
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:background="@color/background_grey"
+                        android:theme="@style/GreyRecycleViewTheme"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/medicine_radio_button_list_title">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <RadioGroup
+                                    android:id="@+id/medicine_radio_button_list_radio_group"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginEnd="20dp"
+                                    android:background="@drawable/medicine_information_item_round_corners"
+                                    android:divider="?android:attr/dividerHorizontal"
+                                    android:showDividers="middle" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="20dp"
+                                    android:layout_below="@id/medicine_radio_button_list_radio_group"
+                                    android:background="@color/background_grey" />
+
+                            </RelativeLayout>
+                    </ScrollView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </FrameLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
