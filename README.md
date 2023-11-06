@@ -1,4 +1,5 @@
 # HomePharmacy
+The application was written as an MVP for a startup competition from the biggest Russian bank - Sberbank. The project got first place on the competition and went on to relise as a full application on a russian application store (the MVP was made 2 years ago and obviously everything was redesigned): https://apps.rustore.ru/app/ru.domapteka
 ## Main menu:
 ![photo_2023-11-06_00-48-10](https://github.com/IvanKolchanov/HomePharmacy/assets/83294629/a61c6bb1-0c80-4a14-a17e-5806c08747a4)
 ## Current medicine menu:
